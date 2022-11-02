@@ -13,7 +13,7 @@
                                 <th>PHONE</th>
                             </tr>
                             <?php
-                            $students = $students->totalStudent();
+                            $students = $header->totalStudent();
                             foreach ($students as $student) { ?>
                                 <tr>
                                     <th><?php echo $student['id'] ?></th>

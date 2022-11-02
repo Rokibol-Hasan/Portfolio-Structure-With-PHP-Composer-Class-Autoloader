@@ -1,8 +1,8 @@
 <?php
 require_once "vendor/autoload.php";
-use App\classes\HelloWorld;
+use App\classes\Header;
 
 
-$route  = new HelloWorld();
+$route  = new Header();
 $route->index();
 

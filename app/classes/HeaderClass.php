@@ -2,7 +2,7 @@
 
 namespace App\classes;
 
-class HelloWorld
+class HeaderClass
 {
 
     public $data = [];
@@ -44,12 +44,14 @@ class HelloWorld
     }
 
 
-    public function menu(){
+    public function menu()
+    {
         $this->menuData = [
             0 => ['Home'],
             1 => ['About'],
             2 => ['Contact'],
-            3 => ['Services']
+            3 => ['Services'],
+            4 => ['Login']
         ];
         return $this->menuData;
     }
