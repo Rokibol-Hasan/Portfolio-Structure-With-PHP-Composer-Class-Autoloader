@@ -1,8 +1,7 @@
 <?php
 require_once "vendor/autoload.php";
-use App\classes\Header;
+use App\classes\HeaderClass;
 
-
-$route  = new Header();
+$route  = new HeaderClass();
 $route->index();
 
