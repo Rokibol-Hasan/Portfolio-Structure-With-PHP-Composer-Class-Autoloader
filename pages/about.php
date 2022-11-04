@@ -1,10 +1,10 @@
 <main class="wrapper">
-    <section class="about-bg">
+    <section class="about-bg" style="background-image: url('<?php echo $result['image'];?>') ;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                    <h1><?php echo $result['title'];?></h1>
-                   <p> Best web development services will provide here. Stay with us </p>
+                   <p> <?php echo $result['description'] ;?> </p>
                 </div>
             </div>
         </div>

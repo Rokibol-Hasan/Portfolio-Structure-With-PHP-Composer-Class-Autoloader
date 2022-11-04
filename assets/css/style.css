@@ -17,6 +17,9 @@ p {
   padding: 0;
   margin: 0;
 }
+td{
+  vertical-align: middle;
+}
 .active {
   background: rgb(16, 68, 56) center bottom no-repeat;
 }
@@ -62,7 +65,7 @@ footer {
 /* About-hero css */
 
 .about-bg {
-  background-position: center top;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 600px;

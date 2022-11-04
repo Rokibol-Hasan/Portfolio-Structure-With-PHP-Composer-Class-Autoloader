@@ -3,10 +3,10 @@ require_once "./vendor/autoload.php";
 include "./functions.php";
 
 use App\classes\HeaderClass;
-use App\classes\AddAboutHero;
+use App\classes\AboutHero;
 
 $header = new HeaderClass();
-$hero = new AddAboutHero();
+$hero = new AboutHero();
 
 ?>
 
