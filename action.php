@@ -11,13 +11,11 @@ if (isset($_GET['page'])) {
             include "pages/about.php";
         } elseif ($_GET['page'] == 'Contact') {
             include "pages/contact.php";
-        } elseif ($_GET['page'] == 'Services') {
-            include "pages/services.php";
-        } elseif ($_GET['page'] == 'website') {
+        } elseif ($_GET['page'] == 'Web Application') {
             include "pages/website-service.php";
-        } elseif ($_GET['page'] == 'application') {
+        } elseif ($_GET['page'] == 'Mobile Apps') {
             include "pages/application-service.php";
-        } elseif ($_GET['page'] == 'wordpress') {
+        } elseif ($_GET['page'] == 'Wordpress Development') {
             include "pages/wordpress-service.php";
         } elseif ($_GET['page'] == 'add-about-hero') {
             if (isset($_POST['submit'])) {
@@ -57,7 +55,7 @@ if (isset($_GET['edit'])) {
         }
     }
     include "pages/admin/edit-about-hero.php";
-}elseif (isset($_GET['del'])) {
+} elseif (isset($_GET['del'])) {
     $delId = $_GET['del'];
     $deleteHero = $hero->deleteAboutHero($delId);
     if ($deleteHero) {

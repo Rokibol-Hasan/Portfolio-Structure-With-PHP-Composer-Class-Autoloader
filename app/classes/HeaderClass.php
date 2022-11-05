@@ -47,11 +47,12 @@ class HeaderClass
     public function menu()
     {
         $this->menuData = [
-            0 => ['Home'],
-            1 => ['About'],
-            2 => ['Contact'],
-            3 => ['Services'],
-            4 => ['Login']
+            '0' => ['Home'],
+            '1' => ['About'],
+            '2' => ['Contact'],
+            '3' => [
+                'Services' => ['Web Application', 'Wordpress Development', 'Mobile Apps']
+            ]
         ];
         return $this->menuData;
     }
