@@ -5,6 +5,7 @@
             <div class="col-md-6">
                 <div class="login-form my-5">
                     <form action="" method="POST">
+                        <?php  ?>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email address</label>
                             <input type="email" name="email" class="form-control" id="email">

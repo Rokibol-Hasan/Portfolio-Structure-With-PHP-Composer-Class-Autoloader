@@ -35,6 +35,13 @@ if (isset($_GET['page'])) {
         }
         include "pages/blocks/footer-bar.php";
     } elseif ($_GET['page'] == 'Login') {
+
+        if (isset($_POST['submit'])) {
+            session_start();
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $_SESSION['email'] = $email;
+        }
         include "pages/login.php";
     }
 }

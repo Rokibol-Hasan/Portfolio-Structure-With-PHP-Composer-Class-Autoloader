@@ -18,20 +18,21 @@
                         <tbody>
                             <?php
                             $x = 1;
-                            if ($getData) {
-                                while ($result = $getData->fetch_assoc()) { ?>
-                                    <tr>
-                                        <th scope="row"><?php echo $x++; ?></th>
-                                        <td><?php echo $result['title']; ?></td>
-                                        <td><?php echo $result['description']; ?></td>
-                                        <td><img src="<?php echo $result['image']; ?>" alt="img" height="100px" width="100px"></td>
-                                        <td>
-                                            <a href="?edit=<?php echo $result['id']; ?>" class="btn btn-primary">Update</a>
-                                            <a href="?del=<?php echo $result['id']; ?>" class="btn btn-primary">Delete</a>
-                                        </td>
-                                    </tr>
-                            <?php }
-                            } ?>
+                            // if ($getData) {
+                            //     while ($result = $getData->fetch_assoc()) { 
+
+                            foreach ($getData as $result) { ?>
+                                <tr>
+                                    <th scope="row"><?php echo $x++; ?></th>
+                                    <td><?php echo $result['title']; ?></td>
+                                    <td><?php echo $result['description']; ?></td>
+                                    <td><img src="<?php echo $result['image']; ?>" alt="img" height="100px" width="100px"></td>
+                                    <td>
+                                        <a href="?edit=<?php echo $result['id']; ?>" class="btn btn-primary">Update</a>
+                                        <a href="?del=<?php echo $result['id']; ?>" class="btn btn-primary">Delete</a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
