@@ -23,7 +23,7 @@ if (isset($_GET['page'])) {
             if (isset($_POST['submit'])) {
                 $insertHero = $hero->insertAboutHero($_POST, $_FILES);
                 if ($insertHero) {
-                    echo "<span class='alert alert-primary'>Info Updated!</span>";
+                    header("Location: action.php?page=manage-about-hero");
                 } else {
                     echo "<span class='alert alert-danger'>Something Wrong</span>";
                 }
@@ -40,18 +40,22 @@ if (isset($_GET['page'])) {
 }
 
 if (isset($_GET['edit'])) {
-    if (isset($_GET['edit'])) {
-        $editId = $_GET['edit'];
-        $getDataById = $hero->selectAboutHeroById($editId);
-        $result = $getDataById->fetch_assoc();
-        if (isset($_POST['submit'])) {
-            $editAboutHero = $hero->updateAboutHero($editId, $_POST, $_FILES);
-            if ($editAboutHero) {
-                header("Location: action.php?page=manage-about-hero");
-            }
+    $editId = $_GET['edit'];
+    $getDataById = $hero->selectAboutHeroById($editId);
+    $result = $getDataById->fetch_assoc();
+    if (isset($_POST['submit'])) {
+        $editAboutHero = $hero->updateAboutHero($editId, $_POST, $_FILES);
+        if ($editAboutHero) {
+            header("Location: action.php?page=manage-about-hero");
         }
     }
     include "pages/admin/edit-about-hero.php";
+}elseif (isset($_GET['del'])) {
+    $delId = $_GET['del'];
+    $deleteHero = $hero->deleteAboutHero($delId);
+    if ($deleteHero) {
+        header("Location: action.php?page=manage-about-hero");
+    }
 }
 
 

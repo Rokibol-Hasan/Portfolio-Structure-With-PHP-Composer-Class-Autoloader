@@ -32,7 +32,7 @@ class AboutHero
         } elseif (in_array($fileExtension, $permittedFile) === false) {
             echo "<div class='alert alert-danger'>You can upload only:-"
                 . implode(', ', $permittedFile) . "</div>";
-        } elseif ($fileSize > 2097152) {
+        } elseif ($fileSize > 5097152) {
             echo "<div class='alert alert-danger'>upload file below 2mb</div>";
         } else {
             move_uploaded_file($tempName, $uploadLocation);
@@ -100,5 +100,14 @@ class AboutHero
         $query = "SELECT * FROM tbl_about_hero WHERE id = $id";
         $getData = $this->db->select($query);
         return $getData;
+    }
+    public function deleteAboutHero($id){
+        $query = "DELETE FROM tbl_about_hero WHERE id = $id";
+        $deleteHero = $this->db->delete($query);
+        if ($deleteHero) {
+            return $deleteHero;
+        }else {
+            return false;
+        }
     }
 }
